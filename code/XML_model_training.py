@@ -1,79 +1,145 @@
-import torch
-from transformers import AutoTokenizer, AutoModelForMaskedLM, Trainer, TrainingArguments
-from datasets import load_dataset, Dataset
+import os
+from transformers import AutoTokenizer
+from sklearn.model_selection import train_test_split
 
-# Step 1: Load and preprocess the dataset
-def preprocess_data(file_path):
-    # Read and process your dataset file
-    texts = []
+# Load the tokenizer
+tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-large")
+
+# Define function to load and preprocess the dataset
+def load_dataset(file_path):
+    sentences = []
     labels = []
-    with open(file_path, 'r') as f:
-        while True:
-            try:
-                text = next(f).strip()  # Read the current line for text
-                label_line = next(f).strip()  # Read the next line for labels
-                texts.append(text)
-                labels.append(1 if 'ADR' in label_line else 0)  # Simplified label extraction
-            except StopIteration:
-                break  # End of file reached, exit the loop
+    with open(file_path, "r", encoding="utf-8") as file:
+        sentence = []
+        label = []
+        for line in file:
+            if line.strip() == "":  # Sentence separator
+                if sentence:
+                    sentences.append(sentence)
+                    labels.append(label)
+                    sentence = []
+                    label = []
+            else:
+                token, tag = line.strip().split()
+                sentence.append(token)
+                label.append(tag)
+    if sentence:  # Add the last sentence if file does not end with a blank line
+        sentences.append(sentence)
+        labels.append(label)
+    return sentences, labels
 
-    return Dataset.from_dict({'text': texts, 'label': labels})
+# Load the dataset
+
+sentences, tags = load_dataset( "train.txt")
+
+# Split into training,  validation, test sets  72 % 8% 20%
+
+train_sentences, temp_sentences, train_tags, temp_tags = train_test_split(sentences, tags, test_size=0.28, random_state=42)
+val_sentences, test_sentences, val_tags, test_tags = train_test_split(temp_sentences, temp_tags, test_size=0.71, random_state=42)
 
 
+def tokenize_and_align_labels(sentences, labels, tokenizer, label_to_id):
+    tokenized_inputs = tokenizer(
+        sentences,
+        is_split_into_words=True,
+        padding=True,
+        truncation=True,
+        return_tensors="pt"
+    )
+    aligned_labels = []
+    for i, label in enumerate(labels):
+        word_ids = tokenized_inputs.word_ids(batch_index=i)
+        label_ids = []
+        previous_word_idx = None
+        for word_idx in word_ids:
+            if word_idx is None:
+                label_ids.append(-100)  # Ignore special tokens
+            elif word_idx != previous_word_idx:  # Assign label to the first subword only
+                label_ids.append(label_to_id[label[word_idx]])
+            else:
+                label_ids.append(-100)  # Other subwords get -100
+            previous_word_idx = word_idx
+        aligned_labels.append(label_ids)
+    return tokenized_inputs, aligned_labels
 
-# Load datasets
-train_dataset = preprocess_data("train.txt")
-val_dataset = preprocess_data("val.txt")
-test_dataset = preprocess_data("test.txt")  
+# Define label to ID mapping
+unique_labels = sorted(set(tag for tags in train_tags for tag in tags))
+print("unique_labels",unique_labels)
+label_to_id = {label: i for i, label in enumerate(unique_labels)}
+id_to_label = {i: label for label, i in label_to_id.items()}
 
-# Step 2: Tokenization
-tokenizer = AutoTokenizer.from_pretrained('xlm-roberta-large')
-
-def tokenize(batch):
-    return tokenizer(batch['text'], return_tensors='pt', padding=True, truncation=True)
+# Tokenize and align labels
+train_inputs, train_label_ids = tokenize_and_align_labels(train_sentences, train_tags, tokenizer, label_to_id)
+val_inputs, val_label_ids = tokenize_and_align_labels(val_sentences, val_tags, tokenizer, label_to_id)
 
 
-train_dataset = train_dataset.map(tokenize, batched=True)
-val_dataset = val_dataset.map(tokenize, batched=True)
-test_dataset = test_dataset.map(tokenize, batched=True)
+import torch
+from torch.utils.data import Dataset
 
-# Set input columns for Hugging Face Trainer
-train_dataset = train_dataset.rename_columns({"label": "labels"})
-val_dataset = val_dataset.rename_columns({"label": "labels"})
+class NERDataset(Dataset):
+    def __init__(self, inputs, labels):
+        self.inputs = inputs
+        self.labels = labels
 
-# Set format for PyTorch
-train_dataset.set_format(type="torch", columns=["input_ids", "attention_mask", "labels"])
-val_dataset.set_format(type="torch", columns=["input_ids", "attention_mask", "labels"])
+    def __len__(self):
+        return len(self.inputs["input_ids"])
 
-# Step 3: Load Model
+    def __getitem__(self, idx):
+        return {
+            "input_ids": self.inputs["input_ids"][idx],
+            "attention_mask": self.inputs["attention_mask"][idx],
+            "labels": torch.tensor(self.labels[idx], dtype=torch.long),
+        }
 
-model = AutoModelForMaskedLM.from_pretrained("xlm-roberta-large")
+# Create datasets
+train_dataset = NERDataset(train_inputs, train_label_ids)
+val_dataset = NERDataset(val_inputs, val_label_ids)
 
-# Step 4: Define Training Arguments
+
+from transformers import AutoModelForTokenClassification, TrainingArguments, Trainer
+
+# Load pre-trained model with the number of unique labels
+model = AutoModelForTokenClassification.from_pretrained("xlm-roberta-large", num_labels=len(label_to_id))
+
+
+import evaluate
+metric = evaluate.load("seqeval")
+
+
+def compute_metrics(pred):
+    predictions, labels = pred
+    predictions = predictions.argmax(axis=-1)
+
+    # Remove ignored index (-100)
+    true_labels = [[id_to_label[l] for l in label if l != -100] for label in labels]
+    true_predictions = [
+        [id_to_label[p] for (p, l) in zip(prediction, label) if l != -100]
+        for prediction, label in zip(predictions, labels)
+    ]
+
+    results = metric.compute(predictions=true_predictions, references=true_labels)
+    return {
+        "precision": results["overall_precision"],
+        "recall": results["overall_recall"],
+        "f1": results["overall_f1"],
+        "accuracy": results["overall_accuracy"],
+    }
+
+# Training arguments
 training_args = TrainingArguments(
     output_dir="./results",
     evaluation_strategy="epoch",
     save_strategy="epoch",
-    learning_rate=2e-5,
-    per_device_train_batch_size=16,
-    per_device_eval_batch_size=16,
+    learning_rate=5e-5,
+    per_device_train_batch_size=4,
+    per_device_eval_batch_size=4,
     num_train_epochs=3,
     weight_decay=0.01,
-    logging_dir="./logs",
-    logging_steps=10,
+    save_total_limit=2,
     load_best_model_at_end=True,
-    metric_for_best_model="accuracy",
 )
 
-# Step 5: Trainer
-def compute_metrics(eval_pred):
-    from sklearn.metrics import accuracy_score, precision_recall_fscore_support
-    logits, labels = eval_pred
-    predictions = torch.argmax(torch.tensor(logits), dim=1)
-    accuracy = accuracy_score(labels, predictions)
-    precision, recall, f1, _ = precision_recall_fscore_support(labels, predictions, average="binary")
-    return {"accuracy": accuracy, "precision": precision, "recall": recall, "f1": f1}
-
+# Define trainer
 trainer = Trainer(
     model=model,
     args=training_args,
@@ -83,17 +149,26 @@ trainer = Trainer(
     compute_metrics=compute_metrics,
 )
 
-
 if __name__ == "__main__":
-    # Step 6: Train the Model
+
+    # Train the model
     trainer.train()
-    # Step 7: Save the Model
+
     model.save_pretrained("./fine_tuned_xlm_roberta")
     tokenizer.save_pretrained("./fine_tuned_xlm_roberta")
 
+    # Evaluate the model on the test set
+    test_sentences, test_tags = load_dataset( "test.txt")
+    test_inputs, test_label_ids = tokenize_and_align_labels(test_sentences, test_tags, tokenizer, label_to_id)
+    test_dataset = NERDataset(test_inputs, test_label_ids)
+    test_result = trainer.evaluate(test_dataset=test_dataset)
+    print(test_result)
+    # Predict on a sample sentence  
+    sample_sentence = "The quick brown fox jumps over the lazy dog"
+    tokenized_sample = tokenizer(sample_sentence, return_tensors="pt")
+    sample_prediction = trainer.predict(tokenized_sample)
+    print(sample_prediction.predictions)
+    print(sample_prediction.label_ids)
+    print(sample_prediction.metrics)
+    
 
-
-    # Step 8: Evaluate the Model on Test Set
-    test_results = trainer.evaluate(eval_dataset=test_dataset)
-    print("Test results:", test_results)
-    print(test_results)
