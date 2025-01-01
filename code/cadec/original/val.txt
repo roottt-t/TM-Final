@@ -1,0 +1,801 @@
+T1	ADR 0 9	impotence
+
+T1	ADR 69 97	toes went into muscle spasms
+T2	Drug 161 168	Lipitor
+
+T1	ADR 0 8	Jaundice
+T2	ADR 9 44	right upper quadrant abdominal pain
+T3	ADR 80 99	itching of the skin
+T4	ADR 100 108	weakness
+T5	ADR 45 79	very elevated liver function tests
+T6	ADR 109 125	loss of appetite
+T7	Finding 193 213	gall bladder disease
+T8	Drug 261 268	Lipitor
+T9	ADR 420 432	muscle aches
+T10	ADR 437 454	flu like symptoms
+T11	Drug 485 492	lipitor
+T12	Finding 654 676	permanent liver damage
+T13	Drug 706 713	lipitor
+T14	Finding 727 747	cholestatic Jaundice
+
+T1	ADR 20 28	low mood
+T2	ADR 30 53	loss of self-confidence
+T3	ADR 55 79	loss of interest in life
+T4	ADR 89 98	brain fog
+T5	ADR 101 116	impaired memory
+
+
+T1	ADR 18 37	twitching in thighs
+T2	ADR 96 109	pain in ankle
+T3	ADR 121 133	couldnt walk
+T4	ADR 201 225	bones in foot collapsing
+T5	Drug 249 256	lipitor
+T6	Drug 319 325	medrol
+T7	Drug 390 397	lipitor
+T8	Disease 442 452	alzheimers
+
+
+T1	ADR 0 27	very bad pain in my muscles
+
+T1	ADR 0 24	Pain in shoulders joints
+T2	Finding 173 182	arthritis
+T3	Finding 186 194	bursitus
+T4	Drug 262 269	Lipitor
+T5	Finding 239 246	cripple
+
+T1	ADR 0 9	Leg pains
+T2	ADR 11 25	loss of memory
+T3	ADR 27 31	E.D.
+T4	ADR 36 46	sleep loss
+
+T2	ADR 0 17;28 32	Joint pain in the hips
+T1	ADR 0 17;18 23	Joint pain in the knees
+T3	ADR 34 55	Pain in the shoulders
+T4	ADR 59 100	tingling sensation in the back of my neck
+T5	ADR 102 110	Tinnitus
+T6	ADR 112 124	Weak muscles
+T7	Drug 126 133	Lipitor
+T8	ADR 208 212;235 239	legs ache
+T9	ADR 215 224;235 239	shoulders ache
+T10	ADR 230 234;235 239	hips ache
+T11	ADR 250 260;264 275	acute pain in the legs
+T12	ADR 277 286	Stiffness
+T13	ADR 320 349	Getting out of bed is painful
+T14	ADR 547 567	tingling in the neck
+T16	ADR 589 592;606 610	leg pain
+T15	ADR 597 605;606 610	shoulder pain
+T17	Finding 677 688	don't smoke
+T18	Finding 723 747	drink wine in moderation
+T19	Finding 860 895	elevated levels of high cholesterol
+T20	ADR 920 933	muscle damage
+
+T1	ADR 0 15	Torn ham string
+T2	ADR 85 102	pain in both legs
+T3	ADR 157 178	could hardly stand it
+T4	ADR 354 371	could hardly walk
+T5	ADR 507 511	pain
+T6	ADR 614 625	muscle pain
+
+T1	ADR 32 54	Toes became so painful
+T2	ADR 83 97	leg neuropathy
+T3	Drug 99 106	Lipitor
+T4	Drug 256 263	Lipitor
+
+T1	ADR 0 9	neck pain
+T2	ADR 10 21	back spasms
+T3	ADR 22 36	foggy thinking
+T4	ADR 37 45	insomnia
+T5	Drug 316 324	red rice
+T6	Drug 334 341	omega 3
+T7	Finding 384 390	plaque
+T8	Finding 427 444	high plaque count
+
+T1	ADR 0 20	muscle aches in arms
+
+T1	ADR 0 4;5 10	Body aches
+T2	ADR 12 17;5 10	knees aches
+T3	ADR 19 23;5 10	back aches
+T4	ADR 39 44;5 10	chest aches
+T5	ADR 73 82	lethargic
+T6	ADR 84 109	short term memory lacking
+T7	ADR 111 143	concentration is worse than ever
+T8	ADR 242 252	body aches
+T9	ADR 296 302	stress
+T10	ADR 304 311	anxiety
+T11	Drug 348 355	lipitor
+
+T1	ADR 0 22	Joint pain in shoulder
+T2	ADR 63 94	Extreme pain in upper back area
+T3	ADR 96 109	Pain in knees
+T4	ADR 111 133	short term memory loss
+T5	ADR 287 291	pain
+T6	Drug 393 402	Pravachol
+
+T1	ADR 0 10	Depression
+T2	ADR 12 20	bursitis
+T3	Drug 55 70	cortisone shots
+T4	ADR 76 85	toes hurt
+T5	ADR 106 124	MEMORY LOSS-severe
+T6	ADR 126 135	dizzyness
+T7	ADR 137 145	in a FOG
+T8	ADR 146 166	bottoms of feet hurt
+T9	ADR 168 190	felt like shin splints
+T10	ADR 191 199	tingling
+T11	ADR 383 389	tingle
+T12	Disease 413 425	nerve damage
+T13	ADR 597 607	Depression
+T14	Drug 651 658	LIPITOR
+T15	ADR 689 701	MMDepression
+T16	ADR 1322 1326	pain
+T17	ADR 1413 1426	muscle issues
+
+T8	ADR 0 6;18 22	muscle pain
+T1	ADR 0 6;7 13	muscle spasms
+T2	ADR 24 34	joint pain
+T3	ADR 36 45	headaches
+T4	ADR 47 58	memory loss
+T5	ADR 60 69	skin rash
+T6	ADR 71 81	depression
+T7	ADR 83 91	insomnia
+T9	ADR 138 144;155 159	muscle pain
+T10	ADR 149 154;155 159	joint pain
+T11	Symptom 244 271	liver enzymes were elevated
+
+T1	ADR 0 15	pains in my hip
+T2	ADR 17 26	depresion
+T3	ADR 31 42	mood swings
+
+T1	ADR 0 11	weight gain
+T2	ADR 13 22	confusion
+T3	ADR 24 34	depression
+T4	Drug 48 55	LIPITOR
+
+T1	ADR 0 18	General depression
+T2	ADR 23 38	severe insomnia
+T3	ADR 40 77	Irrational feelings of impending doom
+
+T1	Drug 33 44	simvastatin
+T2	Drug 46 57	pravastatin
+T3	Drug 67 79	atorvastatin
+T4	ADR 100 106;84 95	severe joint pains
+T5	ADR 130 142	dys-motility
+T6	ADR 144 243	irritable bowel syndrome of the sigmoid area and descending colon with obstipation and constipation
+T7	ADR 341 348	fatigue
+T8	ADR 353 363	joint pain
+T9	ADR 368 397	short term memory dysfunction
+
+T1	ADR 0 19	Extremely dry mouth
+T2	ADR 21 39	severe joint aches
+T3	ADR 41 68	muscle cramps in lower legs
+T5	ADR 70 87;94 99	sever swelling of hands
+T6	ADR 70 87;104 110	sever swelling of ankles
+T4	ADR 70 87;88 92	sever swelling of feet
+T7	ADR 112 132	difficulty breathing
+T8	ADR 134 139	tired
+T9	ADR 141 152	memory loss
+T10	ADR 154 169	mild depression
+T11	ADR 171 190	diminished eyesight
+T12	ADR 360 373	forgetfulness
+T13	ADR 396 410	memory failure
+T14	Drug 460 467	Lipitor
+T15	ADR 525 533	swelling
+T16	ADR 559 571	muscle aches
+T17	ADR 576 586	joint pain
+T18	ADR 600 611	memory loss
+
+T1	ADR 8 17	hair loss
+#1	AnnotatorNotes T1	alopecia
+T2	ADR 27 42	joint stiffness
+T3	ADR 91 109	heart palpitations
+#2	AnnotatorNotes T3	heart palpitations
+T4	ADR 117 127	depression
+#3	AnnotatorNotes T4	depression
+T5	ADR 155 162	itching
+T6	ADR 143 150	swollen
+#4	AnnotatorNotes T6	oedema
+
+T1	Drug 31 38	Lipitor
+T3	ADR 66 103;121 130	left leg, below the knee, experienced stiffness
+T2	ADR 66 103;104 116	left leg, below the knee, experienced intense pain
+
+T1	ADR 8 23	burning feeling
+T2	ADR 28 46	numbing of my feet
+T3	ADR 115 122	Burning
+
+T1	ADR 10 13	gas
+#1	AnnotatorNotes T1	nonspecific eructation, flatus, bloating
+T2	ADR 55 63	painfull
+T3	ADR 65 72	Diarhea
+T4	ADR 74 82	headache
+T5	ADR 84 92	backache
+#2	AnnotatorNotes T5	back pain
+T6	ADR 94 104	runny nose
+#3	AnnotatorNotes T6	rhinorroea
+T7	ADR 265 268	gas
+T8	ADR 273 278	bloat
+
+T1	ADR 0 10	Exhaustion
+T2	ADR 12 19	malaise
+T3	ADR 21 34	upset stomach
+T4	ADR 35 50	constant hunger
+
+T1	ADR 0 14	Severe myalgia
+T2	Drug 101 108	Lipitor
+T3	Finding 173 192	muscle inflammation
+T4	Finding 202 224	connective tissue pain
+T5	Disease 233 253	rheumatoid arthritis
+T6	Disease 257 269	fibromyalgia
+T7	Disease 384 404	rheumatoid arthritis
+T8	Drug 448 455	Lipitor
+T9	Drug 484 493	Pravochol
+T10	Drug 556 575	time-release naicin
+T11	Drug 581 589	fish oil
+
+T2	ADR 0 7;35 41	pain in joints
+T1	ADR 0 7;8 19	pain in my left leg
+
+T12	ADR 22 47;64 68	very painful muscle aches back
+T11	ADR 22 47;48 59	very painful muscle aches in the neck
+T1	ADR 70 85	pain in my knee
+T2	ADR 87 103	severe headaches
+T3	ADR 121 140	pain in leg muscles
+T4	Drug 180 187	lipitor
+T5	Disease 246 258	fibromyalgia
+T6	Disease 260 271	brain tumor
+T7	ADR 307 318	muscle pain
+T8	ADR 338 364	tightening of neck muscles
+T9	ADR 377 386	headaches
+T10	ADR 397 405	headache
+
+T1	ADR 0 17	Burning of tongue
+T2	ADR 19 39	dry throat and mouth
+T3	Drug 48 55	Lipitor
+
+T1	ADR 0 11	Sore muscle
+T2	Drug 125 132	Lipitor
+T3	ADR 141 156	lower back pain
+T4	Drug 206 213	Lipitor
+T5	ADR 237 252	lower back pain
+
+T1	ADR 12 24	constipation
+T2	ADR 29 39	flatulence
+T3	Drug 88 95	Lipitor
+T4	ADR 109 120	hemorrhoids
+T5	ADR 173 185	constipation
+T6	Drug 232 239	Lipitor
+T7	ADR 243 248;278 287	urine corrosive
+T8	ADR 330 334	rash
+T9	ADR 400 415;422 426	muscle problems legs
+T10	ADR 520 540	tremendous neck pain
+T11	ADR 574 590	severe headaches
+T12	Drug 612 619	Lipitor
+T13	ADR 623 627	rash
+T14	ADR 636 647	hemorrhoids
+T15	ADR 662 681	weakness in my legs
+
+T2	ADR 54 68;75 84	muscle pain in right hip
+T1	ADR 54 68;69 73	muscle pain in legs
+T3	ADR 86 96	depression
+T4	ADR 121 139	heart palpitations
+T5	ADR 149 160	severe pain
+T6	Drug 218 225	Lipitor
+T7	ADR 230 234	pain
+T8	ADR 397 413	flu-like symtoms
+T9	ADR 418 438	all-over muscle pain
+
+T1	ADR 0 17	pain in both legs
+T2	ADR 19 41	unable to climb stairs
+T3	ADR 59 74	unable to stand
+T4	ADR 97 123	extrem pain in knee joints
+T5	ADR 254 270	pain in the legs
+T6	ADR 360 377	failed knee joits
+
+T1	Drug 7 14	LIPITOR
+T2	ADR 28 47	Developed sore legs
+T3	ADR 49 58	sore back
+T4	ADR 68 77	tiredness
+T5	ADR 112 136	difficult to concentrate
+#1	AnnotatorNotes T5	difficulty concentrating
+T6	ADR 172 181	toothache
+T8	Disease 455 475	massive heart attack
+#2	AnnotatorNotes T8	ischaemic heart disease
+T9	ADR 253 262	toothache
+#3	AnnotatorNotes T9	toothache
+T10	ADR 82 99	my head was foggy
+T11	ADR 410 440	symptoms of Parkison's disease
+
+T1	ADR 7 17	Chest pain
+T2	ADR 27 35	weakness
+#1	AnnotatorNotes T2	weakness
+T3	ADR 37 47	depression
+#2	AnnotatorNotes T3	depression
+T4	ADR 49 56	anxiety
+#3	AnnotatorNotes T4	anxiety
+T5	ADR 76 84	insomnia
+#4	AnnotatorNotes T5	insomnia
+T6	ADR 86 93	fatigue
+T7	ADR 95 110	memory problems
+#5	AnnotatorNotes T7	amnesia
+T8	ADR 112 136	inability to concentrate
+#6	AnnotatorNotes T8	difficulty concentrating
+T9	Drug 174 181	Lipitor
+T10	Drug 367 374	Lipitor
+T12	Disease 454 456	MS
+#7	AnnotatorNotes T12	multiple sclerosis
+T13	Disease 457 462	Lupus
+#8	AnnotatorNotes T13	systemic lupus erythematous
+T14	Disease 463 475	Fibromyalgia
+#9	AnnotatorNotes T14	fibromyalgia
+T15	Drug 637 644	Lipitor
+T16	ADR 785 795	chest pain
+T17	ADR 891 898	fatigue
+T18	ADR 900 907	anxiety
+#10	AnnotatorNotes T18	anxiety
+T19	ADR 909 915	memory
+#11	AnnotatorNotes T19	amnesia
+T20	ADR 920 928	insomnia
+#12	AnnotatorNotes T20	insomnia
+T21	Disease 1137 1147	depression
+T23	ADR 274 286	feeling weak
+T24	ADR 331 335	weak
+T11	Drug 553 560	Lipitor
+
+T1	ADR 0 18	blinding headaches
+T2	ADR 20 24;38 42	neck pain
+T3	ADR 29 37;38 42	shoulder pain
+T4	ADR 44 55	Memory loss
+T5	ADR 96 110	severe fatigue
+T6	ADR 116 131	aches and pains
+T7	Drug 249 256	lipitor
+T8	ADR 286 303	feel pretty lousy
+
+T1	ADR 16 30	blurred vision
+T2	ADR 44 48	pain
+T3	ADR 0 14	Fuzzy thinking
+T4	Drug 121 135	Red Yeast Rice
+
+
+T1	Drug 23 30	lipitor
+T3	Drug 161 168	lipitor
+T4	Drug 202 209	lipitor
+
+T1	ADR 4 17	muscle spasms
+#1	AnnotatorNotes T1	muscle spasm
+T2	Drug 317 326	vitamin C
+T3	Drug 353 360	lipitol
+
+T1	ADR 105 120	extreme fatigue
+T2	ADR 122 137	muscle weakness
+T3	ADR 139 149	depression
+T4	ADR 177 208	chronic elbow pain in both arms
+T5	Drug 254 261	Lipitor
+
+T1	ADR 14 24	depression
+#1	AnnotatorNotes T1	depression
+T2	Drug 38 45	lipitor
+T3	Drug 93 100	lipitor
+T4	ADR 105 115	depression
+#2	AnnotatorNotes T4	depression
+T5	Drug 150 157	lipitor
+
+T1	ADR 0 20	skipping heart beats
+T2	ADR 22 45	fast and slow heartbeat
+T3	ADR 47 55	leg pain
+T4	ADR 57 67	chest pain
+T5	ADR 69 86	extreme tiredness
+T6	ADR 88 98	depression
+T7	ADR 100 117	severe arrythmias
+T8	ADR 147 173	severe irregular heartbeat
+T9	Drug 279 286	Lipitor
+T10	ADR 344 364	severe heart disease
+
+
+T1	ADR 20 41	trouble concentrating
+#1	AnnotatorNotes T1	difficulty concentrating
+T2	ADR 0 19	Absent mindendness,
+T3	ADR 43 57	blurred vision
+T4	ADR 59 68	headaches
+
+T1	ADR 11 26	extremely hyper
+#1	AnnotatorNotes T1	stimulant
+T2	ADR 326 337	hyperactive
+T3	Drug 580 587	Lipitor
+T4	Drug 647 654	Lipitor
+T5	ADR 30 61	could not do things fast enough
+T6	Finding 231 243	liver damage
+T7	ADR 533 547	constant alert
+
+T1	ADR 32 40	fatigued
+T2	ADR 76 80	pain
+T3	ADR 109 118	lethargic
+T4	ADR 135 149	Blurred vision
+T5	ADR 210 220	joint pain
+T6	Disease 237 245	diabetic
+#1	AnnotatorNotes T6	diabetes
+T7	Disease 222 228	Bypass
+#2	AnnotatorNotes T7	ischemic heart disease
+T8	Drug 258 265	lipitor
+T9	Disease 437 445	diabetes
+T10	Drug 482 489	Lipitor
+T12	ADR 552 563	muscle pain
+#4	AnnotatorNotes T12	myalgia
+T13	ADR 565 580	bone/joint pain
+T14	Disease 859 867	High LDL
+#5	AnnotatorNotes T14	hypercholesterolaemia
+T15	Drug 848 855	Lipitor
+T18	ADR 508 526	lack of enthusiasm
+T19	ADR 528 550	short term memory loss
+T11	Disease 653 671	Metabolic syndrome
+T16	Drug 1104 1111	Lipitor
+
+T1	ADR 60 78	severe back spasms
+T2	ADR 89 113	intense pain in my knees
+T3	ADR 118 147	spasms all throughout my legs
+T4	ADR 149 173	Weakness in my right arm
+T5	ADR 196 245	feeling like I was walking through waist-deep mud
+T6	ADR 247 270	I simply could not walk
+T7	ADR 272 287	Extreme anxiety
+T8	Drug 481 486	COQ10
+T9	Drug 523 532	potassium
+
+T1	ADR 0 15;25 30	Muscle aches in chest
+T2	ADR 0 15;16 20	Muscle aches in arms
+
+T1	ADR 0 9	back ache
+T2	ADR 11 20	dizziness
+T3	ADR 22 32	leg cramps
+T4	Drug 79 85	Diovan
+T5	Drug 225 231	Diovan
+
+T1	ADR 30 47	severe depression
+T2	ADR 49 82	inability to pull myself from bed
+T3	ADR 84 93	headaches
+T4	ADR 108 144	felt like I was coming down with flu
+T5	Drug 200 207	Lipitor
+
+T1	Drug 13 20	Lipitor
+T2	ADR 51 67	flu-like syptoms
+T3	ADR 76 85	dizziness
+T4	ADR 86 92	nausea
+T5	ADR 94 106	muscle aches
+T7	ADR 107 114;124 136	loss of productivity
+T6	ADR 107 114;115 121	loss of energy
+T8	ADR 138 147	headaches
+T9	Drug 228 235	Lipitor
+
+T1	ADR 0 11;21 26	Severe back pains
+T2	ADR 16 20;21 26	neck pains
+T3	ADR 39 55	severe headaches
+
+T1	Drug 15 27	Lipitor 40mg
+T2	ADR 148 171	TERRIBLE abdominal pain
+T3	ADR 173 192	shortness of breath
+T4	ADR 198 218	EXTREME muscle pains
+T5	Drug 371 378	lipitor
+
+T1	ADR 0 12	fuzzy vision
+T2	ADR 102 110	migraine
+T3	ADR 125 135	tintinitus
+T4	ADR 163 178	vision problems
+T5	Disease 266 281	vision problems
+
+T1	Disease 156 176	Hypercholesterolemia
+T2	Symptom 50 69	Cholesterol went up
+
+T1	ADR 33 45	muscle aches
+T2	ADR 57 81	tingling in arm and hand
+T3	ADR 83 96	sore shoulder
+T4	ADR 97 104	fatigue
+T5	ADR 105 115	poor sleep
+T6	Drug 282 289	lipitor
+T7	Drug 493 500	Lipitor
+T8	Drug 587 594	lipitor
+T9	Drug 681 688	lipitor
+T10	ADR 760 775	pain in muscles
+T11	ADR 781 795	severe fatigue
+T12	Drug 848 857	Pravachol
+T13	ADR 910 915	pains
+T14	ADR 920 927	fatigue
+
+T1	ADR 0 10	depression
+T2	ADR 12 32	exercise intolerance
+T3	ADR 34 49	muscle weakness
+T4	ADR 51 66	memory problems
+T5	ADR 91 98	amnesia
+T6	ADR 128 134	nausea
+T7	ADR 139 147	vomiting
+
+T1	ADR 0 15	Lower back pain
+T2	ADR 17 36	stiffness in joints
+
+T1	ADR 0 8	lethargy
+T2	ADR 13 25	leg soreness
+
+T1	Drug 17 24	LIPITOR
+T2	Drug 54 60	Baycol
+T3	ADR 119 124;136 140	joint pain
+T4	ADR 129 135;136 140	muscle pain
+T10	ADR 213 217	pain
+T5	ADR 228 237	depressed
+T11	ADR 243 247	pain
+T13	ADR 275 292;305 317	limits my ability climb stairs
+T14	ADR 275 292;322 335	limits my ability lift anything
+T12	ADR 275 292;293 300	limits my ability to walk
+T15	ADR 390 402	thigh cramps
+T7	ADR 452 460	weakness
+T9	Disease 535 560	cholesterol was very high
+
+T1	ADR 85 95	joint pain
+T2	ADR 97 108	muscle pain
+T3	ADR 110 120	depression
+T4	ADR 125 134	tiredness
+T5	Finding 229 239	arthristis
+T6	Drug 258 265	Lipitor
+
+T1	ADR 0 24;25 30;41 49	Severe (burning) pain in upper left arm
+T2	ADR 0 24;35 40;41 49	Severe (burning) pain in lower left arm
+T3	ADR 0 24;54 63	Severe (burning) pain in left hand
+T4	ADR 65 74;84 97	stiffness in both knees
+T5	ADR 79 83;84 97	pain in both knees
+T6	ADR 99 144	pain in upper back (over left shoulder blade)
+T7	ADR 146 165	Pain in both elbows
+T8	ADR 167 183	Pain in left arm
+T9	ADR 340 358	Pain is so intense
+T10	ADR 475 492	flu-like symptoms
+T11	ADR 531 552	pains in my left knee
+T12	Finding 586 595	arthritus
+T13	Finding 624 633	arthritus
+T14	ADR 669 693	pain has been so intense
+T15	Drug 752 758	Liptor
+T16	Drug 826 832	Liptor
+T17	Finding 1060 1072	heart attack
+T18	Finding 1115 1127	intense pain
+
+T1	Drug 87 94	Lipitor
+T2	ADR 109 131	pain in the lower legs
+T3	ADR 184 207	muscles were very stiff
+T4	Drug 267 274	Lipitor
+T5	ADR 285 289	pain
+T6	ADR 333 337	pain
+T7	ADR 440 458;459 487	severe pain in the muscles in the shoulder area
+T8	ADR 440 458;489 499	severe pain in the upper back
+T9	ADR 440 458;504 508	severe pain in the neck
+T10	ADR 514 518;539 543	pain neck
+T11	ADR 523 532;539 543	stiffness neck
+T12	Finding 662 668	stress
+T13	Drug 786 793	Lipitor
+T14	ADR 838 842;866 870	pain neck
+T15	ADR 847 856;866 870	stiffness neck
+T16	ADR 875 886;887 895	pain in the shoulder
+T17	ADR 875 886;900 904	pain in the back
+T18	Drug 964 971	Lipitor
+T19	Drug 1000 1007	Lipitor
+
+T1	Drug 15 22	LIPITOR
+T2	ADR 74 79;93 97	ANKLE PAIN
+T3	ADR 81 85;93 97	CALF PAIN
+T4	ADR 87 92;93 97	THIGH PAIN
+T5	ADR 123 150	EVERYTHING ON MY BODY HURTS
+T6	Finding 207 216	ARTHRITIS
+T7	Drug 267 274	LIPITOR
+T8	ADR 354 364	VERY TIRED
+
+T1	ADR 0 21	Weakness in both legs
+T2	ADR 23 31	hip pain
+T3	ADR 33 42	knee pain
+T4	ADR 44 48;59 63	feet pain
+T5	ADR 53 58;59 63	ankle pain
+T6	ADR 65 80	Lower back pain
+T7	ADR 82 128	Muscle weakness from the pevis down to my toes
+T8	Drug 243 250	Lipitor
+T9	ADR 328 341	aches in legs
+
+T1	ADR 0 22	Severe muscle cramping
+T2	ADR 24 39	Muscle weakness
+T3	Drug 41 48	Lipitor
+T4	ADR 124 137	muscle spasms
+T5	ADR 142 150	cramping
+T6	ADR 239 252	can not sleep
+T7	ADR 260 279	severe leg cramping
+T8	ADR 291 297	cramps
+T9	Drug 345 352	Lipitor
+T10	ADR 504 531	thighs would not push me up
+T11	ADR 560 577	fingers twitching
+T12	ADR 637 651	Legs twitching
+T13	ADR 695 701	cramps
+
+T1	ADR 19 39	cramps in my fingers
+T2	ADR 102 113;80 88	very blurry eyesight
+T3	ADR 121 130	back pain
+T4	ADR 149 172	shoulders are inflammed
+T5	ADR 219 306	neck right down to my right shoulder blade is very very sensitive and very very painful
+T6	ADR 312 316	pain
+T7	ADR 340 349	depressed
+T8	ADR 365 369	pain
+T9	ADR 408 417	headaches
+T10	ADR 443 464	concentration is poor
+T11	ADR 478 487	heartburn
+T12	ADR 492 503	indigestion
+T13	Drug 548 555	Lipitor
+T14	Drug 774 781	lipitor
+
+T1	ADR 0 25	Exhaustion after exercise
+T2	ADR 52 63	Heavy limbs
+
+T1	Drug 22 29	Lipitor
+T3	ADR 92 100;107 111	pains in legs
+T4	ADR 92 100;113 118	pains in hands
+T2	ADR 92 100;101 105	pains in hips
+T5	ADR 123 127;132 149	Lost muscular strength
+T6	ADR 155 178	difficulties to swallow
+T8	ADR 180 193;207 213	problems with memory
+T7	ADR 180 193;194 202	problems with tinnitus
+T9	Drug 428 435	Lipitor
+
+T1	ADR 0 6;16 18;19 23	Aching in legs
+T3	ADR 0 6;16 18;24 28	Aching in back
+T4	ADR 0 6;16 18;33 42	Aching in shoulders
+T6	ADR 16 18;24 28;7 15	in back weakness
+T7	ADR 16 18;33 42;7 15	in shoulders weakness
+T5	ADR 16 18;19 23;7 15	in legs weakness
+T8	Drug 72 79	lipitor
+T9	Finding 145 161	high cholesterol
+
+T1	ADR 0 25	SEVERE FATIGUE IN MY BODY
+T2	ADR 30 39	TIREDNESS
+T3	ADR 44 67	MUSCLE PAINS IN MY HIPS
+T4	ADR 289 339	felt like I had aged to eighty years old overnight
+T5	Drug 375 382	Lipitor
+T6	ADR 568 607	feeling all that age caught up with you
+T7	Drug 933 940	Lipitor
+T8	Drug 1137 1144	Lipitor
+T9	Drug 1410 1417	Lipitor
+T10	Finding 1561 1574	hypochondriac
+T11	Drug 1950 1957	Lipitor
+T12	ADR 1333 1355	I was eighty years old
+T13	ADR 1711 1735	eighty years old feeling
+T14	Drug 2291 2296	Zetia
+T15	Drug 2430 2437	Lipitor
+T16	Drug 2460 2467	Lipitor
+T17	Finding 2536 2546	neck pains
+T18	Finding 220 236	high cholesterol
+
+T1	Drug 165 172	Lipitor
+T2	Drug 176 183	Crestor
+
+T1	ADR 20 28	dementia
+
+T1	ADR 28 53	sever arthritic condition
+T2	Drug 161 168	crestor
+T3	ADR 218 227	mild pain
+T4	ADR 0 4	pain
+
+
+T1	Symptom 45 66	pains through my hips
+T2	ADR 174 182	nauseous
+T3	Drug 417 436	cortisone injection
+
+T1	ADR 188 204	massive diarrhea
+T2	ADR 157 182	SEVERE abdominal cramping
+T3	ADR 207 222	severe cramping
+T4	Symptom 330 347	chronic knee pain
+
+T1	ADR 53 71	excessive cramping
+T2	ADR 153 158	tired
+T3	ADR 159 166	fatigue
+T4	ADR 167 186	shortness of breath
+T5	ADR 192 196	pain
+T6	ADR 198 203	dizzy
+T7	ADR 204 210	nausea
+T8	ADR 212 224	unconsolable
+#1	AnnotatorNotes T8	Possible pain/ distress or anxiety symptoms
+
+T1	ADR 0 25	Severe abdominal cramping
+T2	ADR 27 35	sweating
+T3	ADR 37 50	period cramps
+T4	ADR 52 68	vaginal bleeding
+T5	ADR 70 78	diarrhea
+T6	ADR 80 91	acid reflux
+#1	AnnotatorNotes T6	gastric Reflux
+T7	Finding 130 138	migraine
+T8	ADR 148 152	pain
+T10	ADR 93 102	dry mouth
+
+T1	ADR 62 84	sever abdominal cramps
+T2	ADR 96 109	period cramps
+T3	ADR 175 183	diarrhea
+T4	Drug 123 128	Advil
+T6	Symptom 149 162	cramping pain
+
+T1	ADR 7 21	stomach cramps
+T2	ADR 26 32	diarea
+T3	ADR 47 57	drowsiness
+T4	ADR 34 42	Headache
+T5	ADR 143 149	Cramps
+T6	ADR 164 196	felt like removing my intestines
+
+T1	Drug 11 20	arthrotec
+T2	Drug 30 40	tylenol #3
+T3	ADR 78 99	severe abdominal pain
+T4	ADR 140 162	bowel/uterine cramping
+T5	Symptom 257 270	shoulder pain
+T6	ADR 381 392	severe pain
+T7	Drug 446 456	tylenol #3
+
+T1	ADR 77 86	dizziness
+T2	ADR 88 94	nausea
+T3	ADR 100 112	stomach pain
+T4	ADR 157 177	pain in major joints
+T5	ADR 219 242	Elevated blood pressure
+#1	AnnotatorNotes T5	hypertension
+T6	ADR 247 265	heart palpitations
+#2	AnnotatorNotes T6	palpitations
+T7	ADR 287 292	dizzy
+T8	ADR 316 353	Extreme gas in stomach and intestines
+#3	AnnotatorNotes T8	bloating
+T9	ADR 386 411	acid reflux-type symptoms
+#4	AnnotatorNotes T9	dyspepsia
+T10	ADR 452 458	reflux
+
+T2	ADR 3 32	feet would turn red or purple
+T1	ADR 104 146	Didn't even decrease the pain a little bit
+T3	ADR 175 188	make it worse
+
+T1	ADR 497 511	EXTREME nausea
+T2	ADR 0 9	vomitting
+T3	ADR 109 113	sick
+T4	ADR 188 196	sickness
+T5	Symptom 320 339	very painful joints
+T6	ADR 289 297	sickness
+T10	Symptom 368 372	pain
+
+T1	Drug 111 122	misoprostol
+T2	Symptom 8 12	pain
+T3	Symptom 17 30	muscle spasms
+
+T1	Drug 64 73	arthrotec
+T2	Symptom 19 34	lower back pain
+T3	ADR 191 213	MAJOR menstrual cramps
+T4	ADR 224 232	bleeding
+T5	ADR 249 257	sickness
+T6	ADR 269 275	puking
+T7	ADR 364 375	menstrating
+T8	ADR 414 434	brought my period on
+T9	ADR 323 327	pain
+
+T1	ADR 0 21	Bleeding mini periods
+T2	ADR 23 34	lightheaded
+T3	ADR 46 61	finger tingling
+
+T1	Symptom 37 41	pain
+T3	ADR 167 173	Nausea
+T4	ADR 209 227	Irregular cramping
+T5	Symptom 283 291	hip pain
+T6	ADR 356 377	period all month long
+T7	ADR 394 402	nauseous
+T8	ADR 135 165;87 129	bleeding several times a month menstrual cycle is completely out of whack
+
+T1	ADR 88 94	cramps
+T2	ADR 99 121	heavy vaginal bleeding
+#1	AnnotatorNotes T2	But this could possibly be describing menorrhagia
+T3	ADR 126 132;175 182	period another
+T4	Symptom 17 21	pain
+
+T1	ADR 33 61	starting to upset my stomach
+T2	Symptom 169 173	pain
+T3	Symptom 137 148	can't sleep
+
+T1	ADR 0 14	Stomach cramps
+T2	ADR 16 24	diarrhea
+T3	ADR 26 33	fatigue
+
+T1	ADR 0 11	Eye problem
+T2	Drug 139 153	Voltaren Rapid
+
+T2	Disease 215 240	acute shoulder tendonitis
+T3	Symptom 261 266	agony
+T4	Symptom 313 325	inflammation
+T1	ADR 35 49;75 92	blood pressure slightly elevated
+
+T1	Symptom 79 83	pain
+
