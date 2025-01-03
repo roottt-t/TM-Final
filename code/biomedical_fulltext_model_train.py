@@ -6,7 +6,7 @@ import torch
 torch.cuda.empty_cache()
 
 # Load the tokenizer
-tokenizer = AutoTokenizer.from_pretrained("BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext")
+tokenizer = AutoTokenizer.from_pretrained("microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext")
 
 # Define function to load and preprocess the dataset
 def load_dataset(file_path):
@@ -47,6 +47,7 @@ def tokenize_and_align_labels(sentences, labels, tokenizer, label_to_id):
         is_split_into_words=True,
         padding=True,
         truncation=True,
+        max_length=512,
         return_tensors="pt"
     )
     aligned_labels = []
@@ -106,7 +107,7 @@ from transformers import AutoModelForTokenClassification, TrainingArguments, Tra
 
 # Load pre-trained model with the number of unique labels
 model = AutoModelForTokenClassification.from_pretrained(
-    "BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext", 
+    "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
     num_labels=len(label_to_id))
 
 
