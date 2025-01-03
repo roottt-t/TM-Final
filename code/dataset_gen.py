@@ -89,9 +89,22 @@ if __name__ == "__main__":
         # print("Labels:", labels)
 
         dataset.append((tokens, labels))
+        print(len(dataset))
     
-    with open('train.txt', 'w') as f:
-        for tokens, labels in dataset:
+    # with open('train.txt', 'w') as f:
+    #     for tokens, labels in dataset:
+    #         for token, label in zip(tokens, labels):
+    #             f.write(token + '\t' + label + '\n')
+    #         f.write('\n')
+
+    with open('train_small300.txt', 'w') as f:
+        for tokens, labels in dataset[:300]:
+            for token, label in zip(tokens, labels):
+                f.write(token + '\t' + label + '\n')
+            f.write('\n')
+    
+    with open('train_small500.txt', 'w') as f:
+        for tokens, labels in dataset[:500]:
             for token, label in zip(tokens, labels):
                 f.write(token + '\t' + label + '\n')
             f.write('\n')
