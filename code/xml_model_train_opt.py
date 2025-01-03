@@ -110,7 +110,11 @@ from transformers import AutoModelForTokenClassification, TrainingArguments, Tra
 
 # Load pre-trained model with the number of unique labels
 model = AutoModelForTokenClassification.from_pretrained(
+<<<<<<< HEAD
     "xlm-roberta-base", 
+=======
+    "xlm-roberta-large", 
+>>>>>>> 427790c (save xml temp files)
     num_labels=len(label_to_id))
 
 optimizer = AdamW(model.parameters(), lr=5e-5)
@@ -245,4 +249,7 @@ if __name__ == "__main__":
     # Evaluate at the end of training
     validation_metrics = evaluate(val_dataloader, model, accelerator)
     print(f"Validation Metrics: {validation_metrics}")
+<<<<<<< HEAD
 
+=======
+>>>>>>> 427790c (save xml temp files)

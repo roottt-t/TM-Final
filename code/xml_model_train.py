@@ -38,11 +38,16 @@ sentences, tags = load_dataset( "train.txt")
 # Split into training,  validation, test sets  72 % 8% 20%
 
 train_sentences, temp_sentences, train_tags, temp_tags = train_test_split(sentences, tags, test_size=0.28, random_state=42)
+<<<<<<< HEAD
 val_sentences, test_sentences, val_tags, test_tags = train_test_split(temp_sentences, temp_tags, test_size=0.71, random_state=42)
 
 print("train", len(train_sentences))
 print("val", len(val_sentences))
 print("test", len(test_sentences))
+=======
+val_sentences, test_sentences, val_tags, test_tags = train_test_split(temp_sentences, temp_tags, test_size=0.7, random_state=42)
+
+>>>>>>> 427790c (save xml temp files)
 
 def tokenize_and_align_labels(sentences, labels, tokenizer, label_to_id):
     tokenized_inputs = tokenizer(
@@ -79,7 +84,10 @@ train_inputs, train_label_ids = tokenize_and_align_labels(train_sentences, train
 val_inputs, val_label_ids = tokenize_and_align_labels(val_sentences, val_tags, tokenizer, label_to_id)
 test_inputs, test_label_ids = tokenize_and_align_labels(test_sentences, test_tags, tokenizer, label_to_id)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 427790c (save xml temp files)
 import torch
 from torch.utils.data import Dataset
 
@@ -92,6 +100,11 @@ class NERDataset(Dataset):
         return len(self.inputs["input_ids"])
 
     def __getitem__(self, idx):
+<<<<<<< HEAD
+=======
+        if idx >= len(self.inputs["input_ids"]) or idx >= len(self.labels):
+            return None
+>>>>>>> 427790c (save xml temp files)
         return {
             "input_ids": self.inputs["input_ids"][idx],
             "attention_mask": self.inputs["attention_mask"][idx],
@@ -111,6 +124,10 @@ model = AutoModelForTokenClassification.from_pretrained(
     "xlm-roberta-base", 
     num_labels=len(label_to_id))
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 427790c (save xml temp files)
 import evaluate
 metric = evaluate.load("seqeval")
 
@@ -136,7 +153,10 @@ def compute_metrics(pred):
 
 # Training arguments
 training_args = TrainingArguments(
+<<<<<<< HEAD
     #fp16=True,
+=======
+>>>>>>> 427790c (save xml temp files)
     output_dir="./results",
     evaluation_strategy="epoch",
     save_strategy="epoch",
@@ -177,6 +197,7 @@ if __name__ == "__main__":
     # Set device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+<<<<<<< HEAD
     # Load model and tokenizer
     from transformers import AutoTokenizer, AutoModelForTokenClassification
 
@@ -184,18 +205,37 @@ if __name__ == "__main__":
     model = AutoModelForTokenClassification.from_pretrained("./fine_tuned_xlm_roberta").to(device)
     
     text = "I feel headache."
+=======
+    text = "I feel pain."
+>>>>>>> 427790c (save xml temp files)
     encoded_input = tokenizer(text, return_tensors="pt").to(device)
 
     # forward pass
     output = model(**encoded_input).logits
+<<<<<<< HEAD
+=======
+    print(output)
+>>>>>>> 427790c (save xml temp files)
 
     # get predictions
     predictions = torch.argmax(output, dim=2)
     # get predicted labels
     predicted_labels = [id_to_label[label] for label in predictions[0].tolist()]
     print(predicted_labels)
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 427790c (save xml temp files)
     tokens = tokenizer.convert_ids_to_tokens(encoded_input["input_ids"][0])
     for token, label in zip(tokens, predicted_labels):
         print(f"{token}: {label}")
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 427790c (save xml temp files)
