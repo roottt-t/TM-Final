@@ -1,12 +1,19 @@
 import os
 from transformers import AutoTokenizer
 from sklearn.model_selection import train_test_split
-
+import random
+import numpy as np
 import torch
 torch.cuda.empty_cache()
 
+# Seting random seed
+random.seed(45)
+np.random.seed(45)
+torch.manual_seed(45)
+torch.cuda.manual_seed_all(45)
+
 # Load the tokenizer
-tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base")
+tokenizer = AutoTokenizer.from_pretrained("cimm-kzn/endr-bert")
 
 # Define function to load and preprocess the dataset
 def load_dataset(file_path):
@@ -38,11 +45,7 @@ sentences, tags = load_dataset( "train_single_tag.txt")
 # Split into training,  validation, test sets  72 % 8% 20%
 
 train_sentences, temp_sentences, train_tags, temp_tags = train_test_split(sentences, tags, test_size=0.28, random_state=42)
-val_sentences, test_sentences, val_tags, test_tags = train_test_split(temp_sentences, temp_tags, test_size=0.71, random_state=42)
-
-print("train", len(train_sentences))
-print("val", len(val_sentences))
-print("test", len(test_sentences))
+val_sentences, test_sentences, val_tags, test_tags = train_test_split(temp_sentences, temp_tags, test_size=0.7, random_state=42)
 
 
 def tokenize_and_align_labels(sentences, labels, tokenizer, label_to_id):
@@ -51,6 +54,7 @@ def tokenize_and_align_labels(sentences, labels, tokenizer, label_to_id):
         is_split_into_words=True,
         padding=True,
         truncation=True,
+        max_length=512,
         return_tensors="pt"
     )
     aligned_labels = []
@@ -92,6 +96,8 @@ class NERDataset(Dataset):
         return len(self.inputs["input_ids"])
 
     def __getitem__(self, idx):
+        if idx >= len(self.inputs["input_ids"]) or idx >= len(self.labels):
+            return None
         return {
             "input_ids": self.inputs["input_ids"][idx],
             "attention_mask": self.inputs["attention_mask"][idx],
@@ -108,8 +114,9 @@ from transformers import AutoModelForTokenClassification, TrainingArguments, Tra
 
 # Load pre-trained model with the number of unique labels
 model = AutoModelForTokenClassification.from_pretrained(
-    "xlm-roberta-base", 
+    "cimm-kzn/endr-bert",
     num_labels=len(label_to_id))
+
 
 import evaluate
 metric = evaluate.load("seqeval")
@@ -127,10 +134,8 @@ def compute_metrics(pred):
     ]
 
     results = metric.compute(predictions=true_predictions, references=true_labels)
- 
+    
     print(results)
-    #label_metrics = results["per_label"]
-    #print(label_metrics)
 
     return {
         "precision": results["overall_precision"],
@@ -141,7 +146,6 @@ def compute_metrics(pred):
 
 # Training arguments
 training_args = TrainingArguments(
-    #fp16=True,
     output_dir="./results",
     evaluation_strategy="epoch",
     save_strategy="epoch",
@@ -149,7 +153,7 @@ training_args = TrainingArguments(
     per_device_train_batch_size=2,
     per_device_eval_batch_size=2,
     num_train_epochs=3,
-    weight_decay=0.01,
+    weight_decay=0.00,
     save_total_limit=2,
     load_best_model_at_end=True,
 )
@@ -169,14 +173,9 @@ if __name__ == "__main__":
     # Train the model
     trainer.train()
 
-    model.save_pretrained("./fine_tuned_xlm_roberta")
-    tokenizer.save_pretrained("./fine_tuned_xlm_roberta")
+    model.save_pretrained("./fine_tuned_endrbert")
+    tokenizer.save_pretrained("./fine_tuned_endrbert")
 
-    #from transformers import AutoTokenizer, AutoModelForTokenClassification
-
-    #tokenizer = AutoTokenizer.from_pretrained("./fine_tuned_xlm_roberta")
-    #model = AutoModelForTokenClassification.from_pretrained("./fine_tuned_xlm_roberta")
-    
     # Evaluate on the test set
     print("test_dataset", len(test_dataset))
     test_results = trainer.evaluate(test_dataset)
@@ -187,28 +186,27 @@ if __name__ == "__main__":
     # Set device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # Load model and tokenizer
-    from transformers import AutoTokenizer, AutoModelForTokenClassification
+    tokenizer = AutoTokenizer.from_pretrained("./fine_tuned_endrbert")
+    model = AutoModelForTokenClassification.from_pretrained("./fine_tuned_endrbert", num_labels=len(id_to_label)).to(device)
 
-    tokenizer = AutoTokenizer.from_pretrained("./fine_tuned_xlm_roberta")
-    model = AutoModelForTokenClassification.from_pretrained("./fine_tuned_xlm_roberta").to(device)
-    
-    text = "I feel headache."
+
+    text = "I feel pain."
     encoded_input = tokenizer(text, return_tensors="pt").to(device)
 
     # forward pass
     output = model(**encoded_input).logits
+
 
     # get predictions
     predictions = torch.argmax(output, dim=2)
     # get predicted labels
     predicted_labels = [id_to_label[label] for label in predictions[0].tolist()]
     print(predicted_labels)
-    
 
     tokens = tokenizer.convert_ids_to_tokens(encoded_input["input_ids"][0])
     for token, label in zip(tokens, predicted_labels):
         print(f"{token}: {label}")
+
 
 
 

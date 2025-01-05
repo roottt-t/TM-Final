@@ -35,7 +35,7 @@ def load_dataset(file_path):
 
 # sentences, tags = load_dataset( "train.txt")
 
-sentences,tags = load_dataset( "train.txt")
+sentences,tags = load_dataset( "train_single_tag.txt")
 
 # Split into training,  validation, test sets  72 % 8% 20%
 

@@ -33,7 +33,7 @@ def load_dataset(file_path):
 
 # Load the dataset
 
-sentences, tags = load_dataset( "train.txt")
+sentences, tags = load_dataset("train_single_tag.txt")
 
 # Split into training,  validation, test sets  72 % 8% 20%
 
@@ -127,6 +127,7 @@ def compute_metrics(pred):
     ]
 
     results = metric.compute(predictions=true_predictions, references=true_labels)
+    print(results)
     return {
         "precision": results["overall_precision"],
         "recall": results["overall_recall"],
@@ -171,31 +172,31 @@ if __name__ == "__main__":
     test_results = trainer.evaluate(test_dataset)
     print(test_results)
 
-    # import torch
+    import torch
 
-    # # Set device
-    # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+     # Set device
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # tokenizer = AutoTokenizer.from_pretrained("./fine_tuned_biomedbert")
-    # model = AutoModelForTokenClassification.from_pretrained("./fine_tuned_biomedbert", num_labels=len(id_to_label))
+    tokenizer = AutoTokenizer.from_pretrained("./fine_tuned_biomedbert")
+    model = AutoModelForTokenClassification.from_pretrained("./fine_tuned_biomedbert", num_labels=len(id_to_label)).to(device)
 
 
-    # text = "I feel pain."
-    # encoded_input = tokenizer(text, return_tensors="pt").to(device)
+    text = "I feel a bit drowsy & have a little blurred vision, so far no gastric problems. I feel headache and stomachache."
+    encoded_input = tokenizer(text, return_tensors="pt").to(device)
 
-    # # forward pass
-    # output = model(**encoded_input).logits
+     # forward pass
+    output = model(**encoded_input).logits
     # print(output)
 
-    # # get predictions
-    # predictions = torch.argmax(output, dim=2)
-    # # get predicted labels
-    # predicted_labels = [id_to_label[label] for label in predictions[0].tolist()]
-    # print(predicted_labels)
+     # get predictions
+    predictions = torch.argmax(output, dim=2)
+     # get predicted labels
+    predicted_labels = [id_to_label[label] for label in predictions[0].tolist()]
+    print(predicted_labels)
 
-    # tokens = tokenizer.convert_ids_to_tokens(encoded_input["input_ids"][0])
-    # for token, label in zip(tokens, predicted_labels):
-    #     print(f"{token}: {label}")
+    tokens = tokenizer.convert_ids_to_tokens(encoded_input["input_ids"][0])
+    for token, label in zip(tokens, predicted_labels):
+         print(f"{token}: {label}")
 
 
 
